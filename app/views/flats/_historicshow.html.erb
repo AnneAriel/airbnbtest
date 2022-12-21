@@ -1,0 +1,50 @@
+<div class="container container-show">
+
+  <div class="card-match-show"
+       style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @flat.photo.attached? ? cl_image_path(@flat.photo.key) : asset_path('default.jpg') %>)">
+    <div class="card-match-flex">
+
+      <div class="card-match-text">
+        <h1><%= @flat.name %></h1>
+        <p> <%= @flat.description %> </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="boutons-liens-accord">
+      <% if @flat.user == current_user  %>
+        <%= link_to flat_path(@flat), style:"text-decoration:none;color:black;text-align:center;",
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+          <i class="fa-solid fa-x fa-2xl", style="padding-top:20px; padding-right:20px;"></i>
+        <% end %>
+
+        <%= link_to edit_flat_path(@flat), style:"text-decoration:none;color:black;text-align:center;" do %>
+          <i class="fa-solid fa-pen fa-2xl", style="padding-top:20px; padding-right:20px;"></i>
+        <% end %>
+      <% end %>
+
+      <%= link_to "Back to all flats", flats_path, class: 'btn'%>
+  </div>
+
+  <div class="col-4">
+    <div class="flat-show-card">
+      <h5>Book this place!</h5>
+      <%= simple_form_for [@flat, @booking] do |f| %>
+          <%= f.input :start_date, placeholder: "12/12/2022" %>
+          <%= f.input :end_date, placeholder: "17/12/2022" %>
+          <%= f.submit class:"btn btn-flat" %>
+        <% end %>
+    </div>
+    <div class="flat-show-card">
+      <h3>Details</h3>
+      <div class="flex">
+        <div class="flex">
+          <%= @flat.number_of_guest %> people
+        </div>
+        <div class="flex ms-3">
+          total : <%= @flat.price_per_night %>€
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+
+.back i {
+  font-size: 40px;
+}
+
+
+.card-match-show {
+  border-radius: 20px;
+  height: 50vh;
+  width: 90vw;
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+  .card-match-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    color: white;
+  }
+  .card-match-text {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+.card-match-show-icons {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 20px;
+
+  i {
+    margin-top: 20px;
+    display: block;
+  }
+}
+
+.card-match-show-comments {
+  width: 90vw;
+  margin: 20px auto;
+  .card-match-show-comment {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    p {
+      margin: 0;
+    }
+    img {
+      margin-right: 20px;
+    }
+  }
+  .comment-content {
+    color: grey;
+    font-style: italic;
+  }
+}
