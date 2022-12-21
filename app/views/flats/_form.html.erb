@@ -1,0 +1,10 @@
+<!-- app/views/restaurants/_form.html.erb -->
+<%= simple_form_for(flat) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :adress %>
+  <%= f.input :description %>
+  <%= f.input :price_per_night %>
+  <%= f.input :number_of_guest %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

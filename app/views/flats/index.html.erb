@@ -1,0 +1,29 @@
+<div class="background-image" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+url('https://images.unsplash.com/photo-1614649024145-7f847b1c803f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80')">
+
+<div class="cover mb-4 d-flex align-items-center justify-content-center">
+  <div class="text-center text-white">
+    <h1> Choose <span class="mov"> </span></h1>
+    <h3 class="typed-js" data-controller="typed-js"> </h3>
+  </div>
+  </div>
+  <div class="container py-5">
+    <div class="d-flex align-items-center justify-content-between mb-3">
+      <h3 class="mb-0 " style="color:white" >Flats</h3>
+      <div class="new-flat" style="color:white" >
+        <%= link_to "Enter a new flat", new_flat_path, class:"text-decoration-none text-white" %>
+            </div>
+    </div>
+    <div class="row">
+      <% @flats.each do |flat| %>
+        <div class="co-12 col-sm-6 col-md-4 mb-3">
+          <%= link_to flat_path(flat), class:"text-decoration-none" do %>
+            <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= flat.photo.attached? ? cl_image_path(flat.photo.key) : asset_path('flat_default.jpg') %>)" >
+              <%= flat.name %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

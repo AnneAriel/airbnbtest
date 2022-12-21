@@ -1,0 +1,15 @@
+<div class="position-relative">
+    <h1> Your Reservation</h1>
+
+    <h3>Place : <%= @booking.flat.name %></h3>
+    <p>Start date : <%= @booking.start_date %></p>
+    <p>End date : <%= @booking.end_date %></p>
+    <p>Address : <%= @booking.flat.adress %></p>
+    <p>Price : <%= @booking.flat.price_per_night %>€</p>
+
+    <div class="link-btns">
+      <%= link_to "Back to all flats", flats_path, class: 'btn'%>
+      <%= link_to "Back to flat", flat_path(@booking.flat), class: 'btn'%>
+
+    </div>
+</div>

@@ -10,9 +10,20 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
+  <body>
+    <%= render "shared/navbar" %>
+    <%= render "shared/flashes" %>
 
     <%= yield %>
+     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var typed = new Typed(".mov",{
+        strings: [, "your flat", "your trip", "your stay"],
+        typeSpeed: 100,
+        backSpeed: 100,
+        loop: true
+
+        })
+    </script>
   </body>
 </html>
